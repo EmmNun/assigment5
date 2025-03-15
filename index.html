@@ -7,31 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="content">
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+        
+        <main class="main-content">
             <h1>Home Page</h1>
             <p>Welcome to the home page. This is the main content section.</p>
-        </section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac justo id erat convallis egestas. Sed vel magna non justo interdum ullamcorper. Maecenas pharetra est vel erat blandit, nec tincidunt neque eleifend.</p>
+        </main>
+        
         <aside class="sidebar">
             <h2>Sidebar Content</h2>
             <p>This is an additional section for links or extra info.</p>
+            <ul>
+                <li><a href="#">Latest Posts</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Gallery</a></li>
+            </ul>
         </aside>
-    </main>
-
-    <footer>
-        <p>Footer</p>
-    </footer>
+        
+        <footer>
+            <p>Footer</p>
+        </footer>
+    </div>
 </body>
 </html>
-
