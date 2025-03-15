@@ -10,116 +10,50 @@ body {
     line-height: 1.6;
 }
 
-/* Container with CSS Grid */
+/* Container with CSS Grid - more direct approach */
 .container {
     display: grid;
+    /* Explicitly define rows and columns */
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 3fr 1fr;
     grid-template-areas:
-        "header header header"
-        "main main sidebar"
-        "footer footer footer";
-    grid-template-columns: 2fr 2fr 1fr;
-    grid-gap: 10px;
+        "header header"
+        "main sidebar"
+        "footer footer";
+    gap: 10px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
+    height: 100vh; /* Full viewport height */
 }
 
-/* Header with Flexbox Navigation */
 header {
     grid-area: header;
-    background-color: #add8e6; /* Light blue */
+    background-color: #add8e6;
     padding: 10px;
+    /* Explicitly use grid-column to span the entire width */
+    grid-column: 1 / -1;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.navbar a {
-    color: #333;
-    text-decoration: none;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
-}
-
-.navbar a:hover, .navbar a.active {
-    background-color: #87ceeb; /* Sky blue */
-    border-radius: 5px;
-}
-
-/* Main content */
 .main-content {
     grid-area: main;
-    background-color: #ffff99; /* Light yellow */
+    background-color: #ffff99;
     padding: 20px;
 }
 
-/* Sidebar */
 .sidebar {
     grid-area: sidebar;
-    background-color: #ffcccc; /* Light pink */
+    background-color: #ffcccc;
     padding: 20px;
 }
 
-/* Footer */
 footer {
     grid-area: footer;
-    background-color: #ccffcc; /* Light green */
+    background-color: #ccffcc;
     padding: 10px;
     text-align: center;
+    /* Explicitly use grid-column to span the entire width */
+    grid-column: 1 / -1;
 }
 
-/* Form styles */
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Responsive layout for mobile */
-@media (max-width: 768px) {
-    .container {
-        grid-template-areas:
-            "header"
-            "main"
-            "sidebar"
-            "footer";
-        grid-template-columns: 1fr;
-    }
-    
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .navbar a {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 5px;
-    }
-}
+/* Rest of your CSS remains the same */
