@@ -1,58 +1,68 @@
 /* Reset básico */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Navegação (Flexbox) */
-nav {
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: lightblue;
+    padding: 10px 0;
+}
+
+nav ul {
     display: flex;
-    justify-content: space-around;
-    background-color: #333;
-    padding: 1em;
+    justify-content: center;
+    list-style: none;
 }
 
-nav a {
-    color: white;
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
     text-decoration: none;
-    padding: 0.5em 1em;
+    color: black;
+    font-weight: bold;
 }
 
-nav a:hover {
-    background-color: #575757;
-    border-radius: 5px;
-}
-
-/* Layout principal (CSS Grid) */
-.main-container {
+/* Layout principal usando Grid */
+main {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
     padding: 20px;
 }
 
-/* Sidebar */
-.sidebar {
-    background: #f4f4f4;
-    padding: 20px;
-}
-
-/* Conteúdo principal */
 .content {
-    background: #e4e4e4;
+    background-color: yellow;
     padding: 20px;
 }
 
-/* Responsivo para telas menores */
+.sidebar {
+    background-color: pink;
+    padding: 20px;
+}
+
+footer {
+    background-color: lightgreen;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    .main-container {
-        grid-template-columns: 1fr;
-    }
-    
-    nav {
+    nav ul {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+    }
+
+    main {
+        grid-template-columns: 1fr;
     }
 }
