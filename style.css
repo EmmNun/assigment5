@@ -1,59 +1,78 @@
-/* Reset some default styles */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-}
-
-/* Container with CSS Grid - more direct approach */
-.container {
-    display: grid;
-    /* Explicitly define rows and columns */
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas:
-        "header header"
-        "main sidebar"
-        "footer footer";
-    gap: 10px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
-    height: 100vh; /* Full viewport height */
 }
 
+/* Grid container */
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+}
+
+/* Header spans full width */
 header {
-    grid-area: header;
-    background-color: #add8e6;
-    padding: 10px;
-    /* Explicitly use grid-column to span the entire width */
     grid-column: 1 / -1;
+    background-color: #add8e6; /* Light blue */
+    padding: 10px;
 }
 
-.main-content {
-    grid-area: main;
-    background-color: #ffff99;
+/* Navigation with flexbox */
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Main content */
+main {
+    grid-column: 1 / 2;
+    background-color: #ffff00; /* Yellow */
     padding: 20px;
 }
 
-.sidebar {
-    grid-area: sidebar;
-    background-color: #ffcccc;
+/* Sidebar */
+aside {
+    grid-column: 2 / 3;
+    background-color: #ffb6c1; /* Pink */
     padding: 20px;
 }
 
+/* Footer spans full width */
 footer {
-    grid-area: footer;
-    background-color: #ccffcc;
+    grid-column: 1 / -1;
+    background-color: #90ee90; /* Light green */
     padding: 10px;
     text-align: center;
-    /* Explicitly use grid-column to span the entire width */
-    grid-column: 1 / -1;
 }
 
-/* Rest of your CSS remains the same */
+/* Media query for mobile */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    main, aside, footer {
+        grid-column: 1 / -1;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
