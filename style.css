@@ -1,88 +1,77 @@
-/* Reset básico */
+/* Reset some basic styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos do corpo */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f0f0f0;
 }
 
-/* Estilos do header e navegação */
-header {
-    background: #007bff;
-    padding: 15px 0;
-}
-
-nav ul {
+/* Flexbox navigation */
+header nav ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px;
+}
+
+header nav ul li {
     list-style: none;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
+header nav ul li a {
     color: white;
-    font-size: 18px;
-    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
 }
 
-/* Layout principal com Grid */
-.container {
+header nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Main layout with Grid */
+main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Automatically fill the grid */
+    gap: 20px;
     padding: 20px;
-    max-width: 900px;
-    margin: auto;
 }
 
-/* Box estilizado */
+/* Styling each box with different colors */
 .box {
     padding: 20px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a card-like effect */
+    transition: transform 0.3s ease;
     color: white;
 }
 
-/* Cores alternadas para os boxes */
-.box:nth-child(1) { background-color: red; }
-.box:nth-child(2) { background-color: blue; }
-.box:nth-child(3) { background-color: green; }
-.box:nth-child(4) { background-color: purple; }
-.box:nth-child(5) { background-color: orange; }
-.box:nth-child(6) { background-color: teal; }
+.box:hover {
+    transform: translateY(-10px); /* Add a hover effect to lift the box */
+}
 
-/* Responsividade */
+.box:nth-child(1) {
+    background-color: #3498db; /* Blue */
+}
+
+.box:nth-child(2) {
+    background-color: #e74c3c; /* Red */
+}
+
+.box:nth-child(3) {
+    background-color: #2ecc71; /* Green */
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* Responsive Design for mobile */
 @media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
+    main {
+        grid-template-columns: 1fr; /* Stack content in one column */
     }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-}
-
-/* Footer */
-footer {
-    margin-top: 20px;
-    padding: 10px;
-    background: #007bff;
-    color: white;
 }
