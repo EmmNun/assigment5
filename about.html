@@ -3,28 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Assignment 5</title>
-    <link rel="stylesheet" href="style.css">
+    <title>About Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+            gap: 15px;
+        }
+
+        .header {
+            grid-column: 1 / 3;
+            background-color: lightblue;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .main-content {
+            background-color: yellow;
+            padding: 20px;
+            display: grid;
+            gap: 15px;
+        }
+
+        .content-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            background-color: pink;
+            padding: 20px;
+            display: grid;
+            gap: 15px;
+        }
+
+        .sidebar-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .footer {
+            grid-column: 1 / 3;
+            background-color: lightgreen;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+            }
+
+            .header-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <div class="header">
+            <div class="header-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
 
-    <main class="container">
-        <h1>About Page</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc et.</p>
-    </main>
+        <div class="main-content">
+            <div class="content-box">
+                <h2>Sobre Nós</h2>
+                <p>Somos uma equipe dedicada a criar conteúdo e soluções inovadoras. Nossa missão é transformar ideias em realidade.</p>
+            </div>
+            <div class="content-box">
+                <h2>Nossa História</h2>
+                <p>Fundada em 2020, nossa empresa cresceu rapidamente graças ao compromisso com a excelência e inovação.</p>
+            </div>
+            <div class="content-box">
+                <h2>Nosso Time</h2>
+                <p>Contamos com profissionais altamente qualificados de diversas áreas, prontos para enfrentar qualquer desafio.</p>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2025 Assignment 5</p>
-    </footer>
+        <div class="sidebar">
+            <div class="sidebar-box">
+                <h3>Informações de Contato</h3>
+                <p>Email: contato@empresa.com</p>
+                <p>Telefone: (11) 1234-5678</p>
+            </div>
+            <div class="sidebar-box">
+                <h3>Localização</h3>
+                <p>Rua Exemplo, 123</p>
+                <p>São Paulo - SP</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2025 Meu Website. Todos os direitos reservados.
+        </div>
+    </div>
 </body>
 </html>
